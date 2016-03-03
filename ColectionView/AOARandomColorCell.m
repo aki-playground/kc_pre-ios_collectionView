@@ -8,14 +8,26 @@
 
 #import "AOARandomColorCell.h"
 
+@interface AOARandomColorCell ()
+
+@property (nonatomic) BOOL shouldAnimateChangeOfColor;
+
+@end
 @implementation AOARandomColorCell
 
 -(void) awakeFromNib {
+    self.shouldAnimateChangeOfColor = NO;
     //setuk KVO
     [self setupKVO];
 }
 
+-(void) prepareForReuse{
+    [super prepareForReuse];
+    self.shouldAnimateChangeOfColor = NO;
+    self.color = [UIColor x11FloralWhiteColor];
+}
 -(void) dealloc {
+    
     [self tearDownKVO];
 }
 
@@ -34,10 +46,16 @@
                        context:(void *)context {
     self.hexView.text = [self.color hexString];
     
-    [UIView animateWithDuration:0.6 animations:^{
-        self.backgroundColor = self.color;
-        self.hexView.textColor = [self.color contrastingTextColor];
-    }];
+    float duration = 0.0f;
+    if (self.shouldAnimateChangeOfColor){
+        duration = 0.6f;
+    }
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         self.backgroundColor = self.color;
+                         self.hexView.textColor = [self.color contrastingTextColor];
+                     }];
+    self.shouldAnimateChangeOfColor = YES;
 }
 
 -(void) tearDownKVO {
