@@ -11,6 +11,11 @@
 		AA9C878D1C88A7000049B963 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C878C1C88A7000049B963 /* AppDelegate.m */; };
 		AA9C878F1C88A7000049B963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9C878E1C88A7000049B963 /* Assets.xcassets */; };
 		AA9C87921C88A7000049B963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9C87901C88A7000049B963 /* LaunchScreen.storyboard */; };
+		AA9C879C1C88A7B30049B963 /* AOAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C879B1C88A7B30049B963 /* AOAColor.m */; };
+		AA9C87A31C88AB910049B963 /* AOAColorfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C87A21C88AB910049B963 /* AOAColorfulViewController.m */; };
+		AA9C87A91C88D3C20049B963 /* AOARandomColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9C87A81C88D3C20049B963 /* AOARandomColorCell.xib */; };
+		AA9C87AC1C88D5210049B963 /* AOARandomColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C87AB1C88D5210049B963 /* AOARandomColorCell.m */; };
+		AA9C87B01C88D69B0049B963 /* UIColor+Colorful.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C87AF1C88D69B0049B963 /* UIColor+Colorful.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,15 @@
 		AA9C878E1C88A7000049B963 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA9C87911C88A7000049B963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA9C87931C88A7000049B963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA9C879A1C88A7B30049B963 /* AOAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAColor.h; sourceTree = "<group>"; };
+		AA9C879B1C88A7B30049B963 /* AOAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAColor.m; sourceTree = "<group>"; };
+		AA9C87A11C88AB910049B963 /* AOAColorfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAColorfulViewController.h; sourceTree = "<group>"; };
+		AA9C87A21C88AB910049B963 /* AOAColorfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAColorfulViewController.m; sourceTree = "<group>"; };
+		AA9C87A81C88D3C20049B963 /* AOARandomColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOARandomColorCell.xib; sourceTree = "<group>"; };
+		AA9C87AA1C88D5210049B963 /* AOARandomColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOARandomColorCell.h; sourceTree = "<group>"; };
+		AA9C87AB1C88D5210049B963 /* AOARandomColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOARandomColorCell.m; sourceTree = "<group>"; };
+		AA9C87AE1C88D69B0049B963 /* UIColor+Colorful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colorful.h"; sourceTree = "<group>"; };
+		AA9C87AF1C88D69B0049B963 /* UIColor+Colorful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colorful.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,10 @@
 		AA9C87871C88A7000049B963 /* ColectionView */ = {
 			isa = PBXGroup;
 			children = (
+				AA9C87AD1C88D6890049B963 /* categories */,
+				AA9C87A41C88D36A0049B963 /* views */,
+				AA9C879D1C88A9690049B963 /* controllers */,
+				AA9C87991C88A7980049B963 /* model */,
 				AA9C878B1C88A7000049B963 /* AppDelegate.h */,
 				AA9C878C1C88A7000049B963 /* AppDelegate.m */,
 				AA9C878E1C88A7000049B963 /* Assets.xcassets */,
@@ -69,6 +87,43 @@
 				AA9C87891C88A7000049B963 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA9C87991C88A7980049B963 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AA9C879A1C88A7B30049B963 /* AOAColor.h */,
+				AA9C879B1C88A7B30049B963 /* AOAColor.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		AA9C879D1C88A9690049B963 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA9C87A11C88AB910049B963 /* AOAColorfulViewController.h */,
+				AA9C87A21C88AB910049B963 /* AOAColorfulViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		AA9C87A41C88D36A0049B963 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				AA9C87A81C88D3C20049B963 /* AOARandomColorCell.xib */,
+				AA9C87AA1C88D5210049B963 /* AOARandomColorCell.h */,
+				AA9C87AB1C88D5210049B963 /* AOARandomColorCell.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		AA9C87AD1C88D6890049B963 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				AA9C87AE1C88D69B0049B963 /* UIColor+Colorful.h */,
+				AA9C87AF1C88D69B0049B963 /* UIColor+Colorful.m */,
+			);
+			name = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9C87A91C88D3C20049B963 /* AOARandomColorCell.xib in Resources */,
 				AA9C878F1C88A7000049B963 /* Assets.xcassets in Resources */,
 				AA9C87921C88A7000049B963 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -140,8 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9C87A31C88AB910049B963 /* AOAColorfulViewController.m in Sources */,
+				AA9C879C1C88A7B30049B963 /* AOAColor.m in Sources */,
 				AA9C878D1C88A7000049B963 /* AppDelegate.m in Sources */,
+				AA9C87AC1C88D5210049B963 /* AOARandomColorCell.m in Sources */,
 				AA9C878A1C88A7000049B963 /* main.m in Sources */,
+				AA9C87B01C88D69B0049B963 /* UIColor+Colorful.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

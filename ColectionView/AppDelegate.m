@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "AOAColor.h"
+#import "AOAColorfulViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) AOAColor *model;
 @end
 
 @implementation AppDelegate
@@ -17,6 +19,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.model = [[AOAColor alloc] init];
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(140,60);
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    layout.minimumInteritemSpacing = 5;
+    layout.headerReferenceSize = CGSizeMake(60, 60);
+    
+    
+    AOAColorfulViewController *cVC = [[AOAColorfulViewController alloc] initWithModel: self.model layout:layout];
+    
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cVC];
+    self.window.rootViewController = nav;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
