@@ -9,6 +9,7 @@
 #import "AOAColorfulViewController.h"
 #import "AOAColor.h"
 #import "AOARandomColorCell.h"
+#import "UIColor+Colorful.h"
 @interface AOAColorfulViewController ()
 
 @property (strong, nonatomic) AOAColor *model;
@@ -81,8 +82,11 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - Utils
 -(void) registerRandomColorCell
 {
-    [self.collectionView registerClass: [UICollectionViewCell class]
-            forCellWithReuseIdentifier: [AOAColorfulViewController randomColorCellId]];
+    //leemos el nib
+    UINib *nib = [UINib nibWithNibName:@"AOARandomColorCell" bundle:nil];
+    
+    // lo registramos
+    [self.collectionView registerNib:nib forCellWithReuseIdentifier:[AOAColorfulViewController randomColorCellId]];
 }
 
 -(void) registerGradientColorCell
@@ -114,19 +118,16 @@ static NSString * const reuseIdentifier = @"Cell";
 -(UICollectionViewCell *) collectionView: (UICollectionView *)collectionView
                   cellForItemAtIndexPath: (NSIndexPath *)indexPath{
 
-    UICollectionViewCell *cell;
     if(indexPath.section == [AOAColorfulViewController randomColorSection]){
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier: [AOAColorfulViewController randomColorCellId]
-                                                         forIndexPath: indexPath];
-        cell.backgroundColor = [self.model randomColor];
-        
+        AOARandomColorCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[AOAColorfulViewController randomColorCellId] forIndexPath:indexPath];
+        cell.color = [self.model randomColor];
+        return cell;
     } else {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier: [AOAColorfulViewController gradientColorCellId]
+        UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: [AOAColorfulViewController gradientColorCellId]
                                                          forIndexPath: indexPath];
         cell.backgroundColor = [self.model colorInGradientAt:indexPath.item to:[AOAColorfulViewController maxGradientColorsToDisplay]];
+        return cell;
     }
-    
-    return cell;
 }
 
 -(UICollectionReusableView *) collectionView:(UICollectionView *)collectionView

@@ -39,4 +39,11 @@
         self.hexView.textColor = [self.color contrastingTextColor];
     }];
 }
+
+-(void) tearDownKVO {
+    [self removeObserver:self forKeyPath:@"color"];
+}
+
+
+
 @end
